@@ -1,0 +1,14 @@
+<p>login works!</p>
+<form (ngSubmit)="sub()">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Entrez votre email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>password</mat-label>
+        <input matInput type="password" placeholder="Entrez votre pass"[(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <button type="submit" 
+      [disabled]="!email || !password"> Connecter</button>
+  </form>
+  

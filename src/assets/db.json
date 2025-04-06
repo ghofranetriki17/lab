@@ -1,0 +1,100 @@
+{
+  "members": [
+    {
+      "cin": "789",
+      "name": "youssef",
+      "type": "Teacher",
+      "createdDate": "30/10/2020",
+      "id": "4"
+    }
+  ],
+  "evts": [
+    {
+      "id": "evt4",
+      "title": "conf 2",
+      "datedebut": "2023-01-01",
+      "datefin": "2023-01-02",
+      "lieu": "tunis"
+    },
+    {
+      "id": "evt2",
+      "title": "conf 2",
+      "datedebut": "2023-01-01",
+      "datefin": "2023-01-02",
+      "lieu": "sfax"
+    },
+    {
+      "id": "evt11",
+      "title": "conf 11",
+      "datedebut": "2023-01-01",
+      "datefin": "2023-01-02",
+      "lieu": "tunis"
+    },
+    {
+      "id": "evt22",
+      "title": "conf 22",
+      "datedebut": "2023-01-01",
+      "datefin": "2023-01-02",
+      "lieu": "sfax"
+    },
+    {
+      "id": "evt23",
+      "title": "conf 23",
+      "datedebut": "2023-01-01",
+      "datefin": "2023-01-02",
+      "lieu": "gafsa"
+    }
+  
+  ],
+  "pubs":[
+    {
+      "id": "pub1",
+      "type": "Article",
+      "titre": "Introduction to Angular",
+      "lien": "http://example.com/angular",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/angular.pdf"
+    },
+    {
+      "id": "pub2",
+      "type": "Article",
+      "titre": "Introduction to React",
+      "lien": "http://example.com/react",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/react.pdf"
+    },
+    {
+      "id": "pub3",
+      "type": "Article",
+      "titre": "Introduction to Vue",
+      "lien": "http://example.com/vue",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/vue.pdf"
+    },
+    {
+      "id": "pub4",
+      "type": "Article",
+      "titre": "Introduction to Angular",
+      "lien": "http://example.com/angular",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/angular.pdf"
+    },
+    {
+      "id": "pub5",
+      "type": "Article",
+      "titre": "Introduction to React",
+      "lien": "http://example.com/react",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/react.pdf"
+    },
+    {
+      "id": "pub6",
+      "type": "Article",
+      "titre": "Introduction to Vue",
+      "lien": "http://example.com/vue",
+      "date": "2023-01-01",
+      "Sourcepdf": "http://example.com/vue.pdf"
+    }
+  ]
+  
+}
