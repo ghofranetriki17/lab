@@ -1,30 +1,12 @@
 {
   "members": [
     {
-      "cin": "789",
-      "name": "youssef",
-      "type": "Teacher",
-      "createdDate": "30/10/2020",
-      "id": "4",
-      "tabEvent": [
-        {
-          "id": "evt4",
-          "title": "conf 2",
-          "datedebut": "2023-01-01",
-          "datefin": "2023-01-02",
-          "lieu": "tunis"
-        }
-      ]
-    },
-    {
       "cin": "123",
       "name": "imen",
       "type": "Teacher",
       "createdDate": "30/10/2020",
       "id": "576",
-      "tabEvent": [
-        
-      ]
+      "tabEvent": []
     },
     {
       "id": "30c1",
