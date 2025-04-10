@@ -22,24 +22,17 @@
   
 
   <div class="chart-container">
-    <!-- First Chart  <div class="chart-wrapper">
+     <div class="chart-wrapper">
       <canvas baseChart
               [type]="'line'"
-              [datasets]="chartData"
-              [labels]="chartLabels"
+              [datasets]="chartDataline"
+              [labels]="chartLabelsline"
               [options]="chartOptions">
       </canvas>
     </div>
-   -->
+   
   
-    <!-- Second Chart </div> <div class="chart-wrapper">
-        <canvas baseChart
-              [type]="'doughnut'"
-              [datasets]="chartData"
-              [labels]="chartLabels"
-              [options]="chartOptions">
-      </canvas>
-    </div>
+    <!-- Second Chart </div> 
 <div class="chart-wrapper">
     <canvas baseChart
           [type]="'bar'"
@@ -58,4 +51,11 @@
    
 </div>
   
-  
+  <div class="chart-wrapper">
+        <canvas baseChart
+              [type]="'doughnut'"
+              [datasets]="chartDatadoughnut"
+              [labels]="chartLabeldoughnuts"
+              [options]="chartOptions">
+      </canvas>
+    </div>

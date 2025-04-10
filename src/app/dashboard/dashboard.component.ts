@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from 'src/services/member.service';
-import { ToolService } from 'src/services/tool.service';
 import { EventService } from 'src/services/event.service';
 import { PubService } from 'src/services/pub.service';
 import { ChartDataset, ChartOptions } from 'chart.js';
+import { Evt } from 'src/modeles/Evt';
+import { Member } from 'src/modeles/Member'; // make sure tabEvent is in this interface
 
 @Component({
   selector: 'app-dashboard',
@@ -18,14 +19,49 @@ export class DashboardComponent implements OnInit {
   NB_Students: number = 0;
   NB_Teachers: number = 0;
 
-  chartDataPie: ChartDataset[] = [];
+  // Pie & Doughnut for Members
   chartLabelsPie: string[] = ['Students', 'Teachers'];
+  chartDataPie: ChartDataset[] = [];
+  chartDataDoughnut: ChartDataset[] = [];
+  chartLabelsDoughnut: string[] = ['Students', 'Teachers'];
+
+  // Doughnut for Events by Location
+  chartLabeldoughnuts: string[] = [];
+  chartDatadoughnut: ChartDataset[] = [];
+
+  // Line Chart: Events per Member
+  chartLabelsline: string[] = [];
+  chartDataline: ChartDataset[] = [];
+
+  // Shared chart options
+  chartOptions: ChartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+      },
+      title: {
+        display: true,
+        text: 'Chart Data'
+      }
+    }
+  };
+
   chartOptionsPie: ChartOptions = {
     responsive: true,
     plugins: {
       legend: {
         position: 'top',
-      },
+      }
+    }
+  };
+
+  chartOptionsDoughnut: ChartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+      }
     }
   };
 
@@ -36,12 +72,15 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // 🔁 Loop through members to count students and teachers
-    this.memberService.GetAllMembers().subscribe((response: any[]) => {
+    // 🧍 Get Members and calculate stats
+    this.memberService.GetAllMembers().subscribe((response: Member[]) => {
       this.NB_Members = response.length;
 
       this.NB_Students = 0;
       this.NB_Teachers = 0;
+
+      const memberNames: string[] = [];
+      const eventCounts: number[] = [];
 
       response.forEach(member => {
         if (member.type.toLowerCase() === 'student') {
@@ -49,24 +88,77 @@ export class DashboardComponent implements OnInit {
         } else if (member.type.toLowerCase() === 'teacher') {
           this.NB_Teachers++;
         }
+
+        // Line Chart: Member name and number of events
+        memberNames.push(member.name);
+        eventCounts.push(member.tabEvent ? member.tabEvent.length : 0);
       });
 
-      // ✅ Update pie chart data
+      // Pie chart
+      const memberData = [this.NB_Students, this.NB_Teachers];
+      const memberColors = ['#36A2EB', '#FF6384'];
+
       this.chartDataPie = [
         {
-          label: 'Members by Type',
-          data: [this.NB_Students, this.NB_Teachers],
-          backgroundColor: ['#36A2EB', '#FF6384']
+          label: 'Members by Type (Pie)',
+          data: memberData,
+          backgroundColor: memberColors
+        }
+      ];
+
+      // Doughnut chart
+      this.chartDataDoughnut = [
+        {
+          label: 'Members by Type (Doughnut)',
+          data: memberData,
+          backgroundColor: memberColors
+        }
+      ];
+
+      // Line chart
+      this.chartLabelsline = memberNames;
+      this.chartDataline = [
+        {
+          label: 'Number of Events per Member',
+          data: eventCounts,
+          borderColor: '#42A5F5',
+          backgroundColor: 'rgba(66,165,245,0.2)',
+          fill: true,
+          tension: 0.3
         }
       ];
     });
 
-    this.pubService.GetAllPub().subscribe((response: any[]) => {
-      this.NB_Pubs = response.length;
+    // 📍 Events by Lieu (Doughnut)
+    this.eventService.GetAllEvents().subscribe((events: Evt[]) => {
+      this.NB_Events = events.length;
+
+      const lieuCounts: { [lieu: string]: number } = {};
+
+      events.forEach(event => {
+        const lieu = event.lieu || 'Unknown';
+        lieuCounts[lieu] = (lieuCounts[lieu] || 0) + 1;
+      });
+
+      this.chartLabeldoughnuts = Object.keys(lieuCounts);
+      const data = Object.values(lieuCounts);
+
+      const colors = this.chartLabeldoughnuts.map(() =>
+        '#' + Math.floor(Math.random() * 16777215).toString(16)
+      );
+
+      this.chartDatadoughnut = [
+        {
+          label: 'Events by Location',
+          data: data,
+          backgroundColor: colors
+        }
+      ];
     });
 
-    this.eventService.GetAllEvents().subscribe((response: any[]) => {
-      this.NB_Events = response.length;
+    // 📚 Publications Count
+    this.pubService.GetAllPub().subscribe((response: any[]) => {
+      this.NB_Pubs = response.length;
     });
   }
 }

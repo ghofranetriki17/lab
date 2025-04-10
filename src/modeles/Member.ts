@@ -1,3 +1,5 @@
+import { Evt } from "./Evt"
+
 export interface Member 
 {
     id:string,
@@ -5,4 +7,5 @@ export interface Member
     name:string,
     type:string,
     createdDate:string
+    tabEvent: Evt[]
 }
