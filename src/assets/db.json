@@ -6,6 +6,19 @@
       "type": "Teacher",
       "createdDate": "30/10/2020",
       "id": "4"
+    }, 
+    { "cin": "123",
+    "name": "imen",
+    "type": "Teacher",
+    "createdDate": "30/10/2020",
+    "id": "576"
+  },
+    {
+      "id": "30c1",
+      "cin": "11166620",
+      "name": "ghofrane",
+      "type": "student",
+      "createdDate": "1111111"
     }
   ],
   "evts": [
@@ -44,9 +57,8 @@
       "datefin": "2023-01-02",
       "lieu": "gafsa"
     }
-  
   ],
-  "pubs":[
+  "pubs": [
     {
       "id": "pub1",
       "type": "Article",
@@ -96,5 +108,4 @@
       "Sourcepdf": "http://example.com/vue.pdf"
     }
   ]
-  
 }

@@ -1,0 +1,53 @@
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap; /* s’adapte sur petits écrans */
+    margin-top: 20px;
+  }
+  
+  mat-card {
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f5f5fa;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  mat-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  mat-card-content {
+    font-size: 2rem;
+    color: #8e24aa;
+    margin-top: 10px;
+  }
+  .chart-container {
+    display: flex;
+    justify-content: space-between; /* Space between the charts */
+    gap: 20px; /* Add some space between the charts */
+    flex-wrap: wrap; /* Ensures that the charts stack on smaller screens */
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .chart-wrapper {
+    width: 100%;
+    max-width: 45%; /* Adjust width for two charts side by side */
+    height: auto;
+  }
+  
+  canvas {
+    max-height: 300px; /* Set maximum height for the canvas */
+  }
+  

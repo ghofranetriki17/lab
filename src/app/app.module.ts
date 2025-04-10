@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-
+import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MemberComponent } from './member/member.component';
@@ -36,6 +36,7 @@ import { ModalPubComponent } from './modal-pub/modal-pub.component';
 import { MatSelectModule } from '@angular/material/select';
 import { firebaseConfig } from './environment';
 import { LoginComponent } from './login/login.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -56,11 +57,6 @@ import { LoginComponent } from './login/login.component';
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-
-
-
-
-
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -81,8 +77,8 @@ import { LoginComponent } from './login/login.component';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule,MatSelectModule
-    
+    MatSelectModule,NgChartsModule,
+    MatCardModule  // Add this line
   ],
   providers: [],
   bootstrap: [AppComponent]
