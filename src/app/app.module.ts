@@ -37,6 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { firebaseConfig } from './environment';
 import { LoginComponent } from './login/login.component';
 import { NgChartsModule } from 'ng2-charts';
+import { MoalMemberComponent } from './modal-mem/modal-mem.component';
+import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { NgChartsModule } from 'ng2-charts';
     ModalEventComponent,
     EventDetailsComponent,
     ModalPubComponent,
-    LoginComponent
+    LoginComponent,
+    MoalMemberComponent,
+    TestFirebaseComponent
   ],
   imports: [
     AngularFireModule.initializeApp(firebaseConfig),
@@ -78,7 +82,11 @@ import { NgChartsModule } from 'ng2-charts';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,NgChartsModule,
-    MatCardModule  // Add this line
+    MatCardModule  ,// Add this line
+    BrowserModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

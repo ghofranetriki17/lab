@@ -50,7 +50,14 @@
       </canvas>
    
 </div>
-  
+<div class="chart-wrapper">
+  <canvas baseChart
+          [type]="'bar'"
+          [datasets]="chartDataBarLieu"
+          [labels]="chartLabelsBarLieu"
+          [options]="chartOptionsBarLieu">
+  </canvas>
+</div>
   <div class="chart-wrapper">
         <canvas baseChart
               [type]="'doughnut'"

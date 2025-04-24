@@ -1,4 +1,11 @@
 {
+  "tools": [
+    {
+      "id": "1",
+      "date": "2023-01-01",
+      "source": "http://example.com/angular"
+    }
+  ],
   "members": [
     {
       "cin": "123",
@@ -6,7 +13,32 @@
       "type": "Teacher",
       "createdDate": "30/10/2020",
       "id": "576",
-      "tabEvent": []
+      "tabEvent": [],
+      "tabPub": [
+        {
+          "id": "pub1",
+          "type": "Article",
+          "titre": "Introduction to Angular",
+          "lien": "http://example.com/angular",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/angular.pdf"
+        },
+        {
+          "id": "pub2",
+          "type": "Article",
+          "titre": "Introduction to React",
+          "lien": "http://example.com/react",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/react.pdf"
+        }
+      ],
+      "tabtools": [
+        {
+          "id": "1",
+          "date": "2023-01-01",
+          "source": "http://example.com/angular"
+        }
+      ]
     },
     {
       "id": "30c1",
@@ -14,6 +46,24 @@
       "name": "ghofrane",
       "type": "student",
       "createdDate": "1111111",
+      "tabPub": [
+        {
+          "id": "pub1",
+          "type": "Article",
+          "titre": "Introduction to Angular",
+          "lien": "http://example.com/angular",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/angular.pdf"
+        },
+        {
+          "id": "pub2",
+          "type": "Article",
+          "titre": "Introduction to React",
+          "lien": "http://example.com/react",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/react.pdf"
+        }
+      ],
       "tabEvent": [
         {
           "id": "evt4",
@@ -28,6 +78,13 @@
           "datedebut": "2023-01-01",
           "datefin": "2023-01-02",
           "lieu": "sfax"
+        }
+      ],
+      "tabtools": [
+        {
+          "id": "1",
+          "date": "2023-01-01",
+          "source": "http://example.com/angular"
         }
       ]
     },
@@ -44,6 +101,31 @@
           "datedebut": "2023-01-01",
           "datefin": "2023-01-02",
           "lieu": "tunis"
+        }
+      ],
+      "tabtools": [
+        {
+          "id": "1",
+          "date": "2023-01-01",
+          "source": "http://example.com/angular"
+        }
+      ],
+      "tabPub": [
+        {
+          "id": "pub1",
+          "type": "Article",
+          "titre": "Introduction to Angular",
+          "lien": "http://example.com/angular",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/angular.pdf"
+        },
+        {
+          "id": "pub2",
+          "type": "Article",
+          "titre": "Introduction to React",
+          "lien": "http://example.com/react",
+          "date": "2023-01-01",
+          "Sourcepdf": "http://example.com/react.pdf"
         }
       ]
     }
@@ -133,6 +215,22 @@
       "lien": "http://example.com/vue",
       "date": "2023-01-01",
       "Sourcepdf": "http://example.com/vue.pdf"
+    },
+    {
+      "id": "a83e",
+      "titre": "hhh",
+      "type": "Journal",
+      "date": "2025-04-08T23:00:00.000Z",
+      "lien": "sbsbhsdbs",
+      "sourcePdf": "dhkzrdkzr"
+    },
+    {
+      "id": "c1c8",
+      "titre": "hh",
+      "type": "Journal",
+      "date": "2025-04-09T23:00:00.000Z",
+      "lien": "www",
+      "sourcePdf": "ww"
     }
   ]
 }

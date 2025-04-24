@@ -6,6 +6,8 @@ export interface Member
     cin:string,
     name:string,
     type:string,
-    createdDate:string
-    tabEvent: Evt[]
+    createdDate:string,
+    tabEvent: Evt[],
+    tabTools: string[],
+    tabPubs: string[],
 }
